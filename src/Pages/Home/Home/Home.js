@@ -1,9 +1,14 @@
 import React from "react";
+import Offer from "../Offer/Offer";
+import Services from "../Services/Services";
+import Slider from "../Slider/Slider";
 
 const Home = () => {
   return (
     <div>
-      <h1>home components</h1>
+      <Slider />
+      <Services />
+      <Offer />
     </div>
   );
 };

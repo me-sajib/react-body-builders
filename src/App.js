@@ -1,10 +1,12 @@
-import Header from "./Pages/Shared/Header/Header";
+import Home from "./Pages/Home/Home/Home";
+import Nav from "./Pages/Shared/Nav/Nav";
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <div className="bg-dark">
+      <Nav />
+      <Home />
+    </div>
   );
 }
 
