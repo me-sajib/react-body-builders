@@ -1,11 +1,9 @@
-import Slider from "./Pages/Home/Slider/Slider";
-import Nav from "./Pages/Shared/Nav/Nav";
+import Header from "./Pages/Shared/Header/Header";
 
 function App() {
   return (
     <>
-      <Nav />
-      <Slider />
+      <Header />
     </>
   );
 }

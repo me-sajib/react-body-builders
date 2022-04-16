@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1",
+    "name": "Yoga Classes",
+    "description": "Yoga classes are a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "details": "At Klub 20, we understand that life can get busy and tiring. That is why we have so many different classes available to you from sun rise to sun set. In the recent years, yoga has gained a huge following and has increased in popularity. Many people are starting to practice yoga and are seeing the great physical and mental benefits. Yoga practice is a great way to strengthen the bond between your mind and your body. It is also a great way to learn to appreciate your body and its abilities. ",
+    "price": "25",
+    "image": "https://media.istockphoto.com/photos/millennials-practicing-yoga-in-a-modern-studio-picture-id1093945358?k=20&m=1093945358&s=612x612&w=0&h=4ER16yFKqURu3-yDxH1eibUMqbGafyqrqSrXxs24QqU=",
+    "category": "yoga"
+  },
+  {
+    "id": "2",
+    "name": "Aerobics classes",
+    "description": "Aerobics classes are a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "details": "If you enjoy taking classes, then Klub 20 has got you covered. We have group fitness classes all week long and throughout the day. Aerobic classes are meant to make you move, sweat and get a little out of breath – it’s all part of the Klub 20 fun! We host a variety of different classes that cater to all kinds of interests.  Whether you want to focus more on muscular endurance, flexibility or simply improve your cardio-vascular endurance, we have many different classes for you to choose from. ",
+    "price": "15",
+    "image": "https://www.bodybuilding.com/images/2022/april/Updated_Kaged_KM-RunnerHat-6393-700xh.jpg",
+    "category": "aerobics"
+  },
+  {
+    "id": "3",
+    "name": "Personal Training",
+    "description": "Personal training is a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "details": "At Klub 20, our personal trainers are here to help all members seeking to make the most out of their workouts. A personal trainer can help you establish a timeline for realistic goals and break them down into smaller components. They are very friendly, knowledgeable and highly motivated in helping you achieve your fitness goals. On your first session, you can expect to share a little bit about yourself, your medical history and what your lifestyle consists",
+    "price": "30",
+    "image": "https://media.istockphoto.com/photos/come-on-one-more-pushup-picture-id1138386337?k=20&m=1138386337&s=612x612&w=0&h=UgVL-r_AdplVnbi7KFXeXtVHcfcpgU8RPEL6gm54Ts4=",
+    "category": "personal training"
+  },
+  {
+    "id": "4",
+    "name": "Functional Training Area",
+    "description": "Functional training is a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "details": "Functional training has become one of the trendiest most effective workouts possible. For this reason we have added a new turf area in our gym allowing everyone to benefit from this type of training. This turf area is available for all of our members at all time and is never reserved. This provides our members with enough space to move, jump, hop, and shuffle! In this section we have added selected accessories such as a weighted sled, a tire and a batlle rope.",
+    "price": "20",
+    "image": "https://www.fitness-world.in/wp-content/uploads/2019/02/5-Steps-to-Create-a-Functional-Training-Space-for-Your-Commercial-Gym.jpg",
+    "category": "functional training"
+  },
+  {
+    "id": "5",
+    "name": "Weight Training",
+    "description": "Weight training is a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "price": "10",
+    "image": "https://media.istockphoto.com/photos/strong-man-doing-deadlift-training-in-gym-picture-id838386570?k=20&m=838386570&s=612x612&w=0&h=z-E8xcyYbaRtRe6_140ns8kAInc0g0SWpY7H7NwJfwc=",
+    "category": "weight training"
+  },
+  {
+    "id": "6",
+    "name": "Spinning Studio",
+    "description": "Spinning studio is a great way to get in shape and get a little bit more done. Whether you're looking to get in shape or just to get some exercise, we have the perfect yoga class for you.",
+    "details": "Whether you are a seasoned spinner, an avid road biker or just eager to test out a class for the first time, Klub20 spinning has you covered! Our spacious spin room is equipped with 40 spin bikes making it easy to cater to everyone’s indoor cycling needs. Our diverse class schedule offers 6am classes for the early morning  bird, noon classes to those looking to take advantage of an indoor ride on their lunch break, and those looking to let lose after a long day of work.  The environment in a spin class in unbeatable! The instructors have a gift of creating a high-energy atmosphere allowing you to get lost in the climbs and the long strips of road.",
+    "price": "20",
+    "image": "https://www.fitness-world.in/wp-content/uploads/2019/02/5-Steps-to-Create-a-Functional-Training-Space-for-Your-Commercial-Gym.jpg",
+    "category": "spinning studio"
+  }
+]
