@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import Checkout from "./Pages/Checkout/Checkout";
+import Nav from "./Pages/Shared/Nav/Nav";
 import Home from "./Pages/Home/Home/Home";
-import NotFound from "./Pages/Shared/NotFound/NotFound";
+import Checkout from "./Pages/Checkout/Checkout";
 import Login from "./Pages/Login/Login";
-import PrivateRoute from "./Pages/Login/PrivateRoute";
 import Registration from "./Pages/Login/Registration";
 import ResetPassword from "./Pages/Login/ResetPassword";
-import Nav from "./Pages/Shared/Nav/Nav";
+import PrivateRoute from "./Pages/Login/PrivateRoute";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
