@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  useSendPasswordResetEmail,
+  useAuthState,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,8 +11,8 @@ const Login = () => {
   // sign in with email and password using react-firebase-hooks
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  // reset password using react-firebase-hooks
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  // social login user check
+  const [socialUser] = useAuthState(auth);
 
   // get the location from react-router-dom
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   // navigate to the page from where user came
-  if (user) {
+  if (user || socialUser) {
     navigate(from, { replace: true });
   }
 
@@ -82,11 +82,10 @@ const Login = () => {
             LOGIN
           </button>
           <p className="mt-3">
-            Forgat password?{" "}
-            <button className="btn btn-link text-primary">
-              {" "}
-              reset password
-            </button>
+            Forgat Password?{" "}
+            <Link to="/resetPassword" className="btn btn-link text-primary">
+              Reset Password
+            </Link>
           </p>
           <p className="mt-3">
             Are you new to Body Builder?
