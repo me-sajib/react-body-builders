@@ -5,6 +5,7 @@ import NotFound from "./Pages/Home/NotFound/NotFound";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute";
 import Registration from "./Pages/Login/Registration";
+import ResetPassword from "./Pages/Login/ResetPassword";
 import Nav from "./Pages/Shared/Nav/Nav";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
