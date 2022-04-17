@@ -5,14 +5,15 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   // sign in with email and password using react-firebase-hooks
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, loading, error] =
     useSignInWithEmailAndPassword(auth);
   // social login user check
-  const [socialUser] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   // get the location from react-router-dom
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Login = () => {
   };
 
   // navigate to the page from where user came
-  if (user || socialUser) {
+  if (user && user.emailVerified) {
     navigate(from, { replace: true });
   }
 
@@ -68,15 +69,7 @@ const Login = () => {
           }
           {
             // if loading is true, show a spinner
-            loading ? (
-              <div className="d-flex justify-content-center">
-                <div className="spinner-border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </div>
-              </div>
-            ) : (
-              ""
-            )
+            loading ? <Loading /> : ""
           }
           <button type="submit" className="btn btn-primary">
             LOGIN

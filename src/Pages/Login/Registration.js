@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 
 const Registration = () => {
   const [terms, setTerms] = useState(false);
@@ -77,15 +78,7 @@ const Registration = () => {
 
           {
             // if loading is true, show a spinner
-            loading ? (
-              <div className="d-flex justify-content-center">
-                <div className="spinner-border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </div>
-              </div>
-            ) : (
-              ""
-            )
+            loading ? <Loading /> : ""
           }
           {
             // if terms is true, show a button
