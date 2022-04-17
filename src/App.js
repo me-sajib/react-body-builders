@@ -8,6 +8,7 @@ import ResetPassword from "./Pages/Login/ResetPassword";
 import PrivateRoute from "./Pages/Login/PrivateRoute";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import About from "./Pages/About/About";
+import Blogs from "./Pages/Blogs/Blogs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route
           path="/checkout/:id"
           element={

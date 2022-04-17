@@ -31,6 +31,9 @@ const Nav = () => {
             <li className="nav-item">
               <CustomLink to="/about">About</CustomLink>
             </li>
+            <li className="nav-item">
+              <CustomLink to="/blogs">Blogs</CustomLink>
+            </li>
 
             <li className="nav-item">
               {
