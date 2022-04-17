@@ -6,11 +6,24 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { useLocation, useNavigate } from "react-router-dom";
+import Loading from "../Shared/Loading/Loading";
 
 const SocialLogin = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, loading, googleError] =
+    useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
+
+  // get the location from react-router-dom
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  // navigate to the page from where user came
+  if (googleUser || githubUser) {
+    navigate(from, { replace: true });
+  }
+
   return (
     <div className="w-75 mx-auto">
       <div className="d-flex align-items-center">
@@ -19,6 +32,7 @@ const SocialLogin = () => {
         <div style={{ height: "1px" }} className="w-100 bg-info"></div>
       </div>
       <div className="social">
+        {loading || githubLoading ? <Loading /> : ""}
         <button
           onClick={() => signInWithGoogle()}
           className="btn btn-info d-block w-75 mx-auto"
