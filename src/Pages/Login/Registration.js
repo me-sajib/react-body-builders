@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
+import SocialLogin from "./SocialLogin";
 
 const Registration = () => {
   const [terms, setTerms] = useState(false);
@@ -99,6 +100,7 @@ const Registration = () => {
         </form>
       </div>
       <ToastContainer />
+      <SocialLogin />
     </div>
   );
 };
