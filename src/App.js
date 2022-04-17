@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Checkout from "./Pages/Home/Checkout/Checkout";
+import Checkout from "./Pages/Checkout/Checkout";
 import Home from "./Pages/Home/Home/Home";
-import NotFound from "./Pages/Home/NotFound/NotFound";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute";
 import Registration from "./Pages/Login/Registration";
