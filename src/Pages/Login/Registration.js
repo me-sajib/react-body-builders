@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
 const Registration = () => {
   const [terms, setTerms] = useState(false);
+  const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const registerUser = (e) => {
@@ -21,6 +22,9 @@ const Registration = () => {
     createUserWithEmailAndPassword(email, password);
   };
 
+  if (user) {
+    return navigate("/");
+  }
   return (
     <div className="bg-dark text-light py-3">
       <div className="container my-5 w-50 mx-auto">
@@ -48,17 +52,6 @@ const Registration = () => {
             <input type="password" name="pwd2" className="form-control" />
           </div>
 
-          {
-            // if user is register
-            user && (
-              <div className="alert alert-success">
-                <b>Registration successful.</b>{" "}
-                <Link to="/login" className="btn btn-link text-primary">
-                  Login Now
-                </Link>
-              </div>
-            )
-          }
           {
             // if any error occurs
             error && <div className="alert alert-danger">{error.message}</div>
