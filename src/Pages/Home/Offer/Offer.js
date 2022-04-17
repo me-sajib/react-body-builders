@@ -11,8 +11,8 @@ const Offer = () => {
               <h4>A BIG OFFER FOR THIS SUMMER</h4>
               <h3>50% Off</h3>
               <p>
-                There are many variations of passages of lorem Ipsum available,
-                but the majority have suffered alteration.
+                This summer our best offer provide you with a big discount on
+                all our services.
               </p>
               <a href="/" className="boxed-btn3">
                 Join Now
