@@ -28,7 +28,7 @@ const About = () => {
                 Having a goal and working to complete it can improve my job
                 satisfaction of me. By establishing goals, i can create a sense
                 of purpose in my career
-                <br />
+                <br /> <br />
                 mentorship, sharing support, sharing tools, code reviews,
                 answering questions, and much more.
               </p>
