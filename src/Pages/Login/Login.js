@@ -1,8 +1,15 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
+  const [user] = useAuthState(auth);
+
+  if (user) {
+    console.log("user is logged in", user);
+  }
   return (
     <div className="bg-dark text-light py-3">
       <div className="w-50 mx-auto my-4">
@@ -29,18 +36,9 @@ const Login = () => {
               id="exampleInputPassword1"
             />
           </div>
-          <div className="mb-3 form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Check me out
-            </label>
-          </div>
+
           <button type="submit" className="btn btn-primary">
-            Submit
+            LOGIN
           </button>
           <p className="mt-3">
             Are you new to Body Builder?

@@ -1,8 +1,11 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const Nav = () => {
+  const [user] = useAuthState(auth);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -28,8 +31,21 @@ const Nav = () => {
             <li className="nav-item">
               <CustomLink to="/about">About</CustomLink>
             </li>
+
             <li className="nav-item">
-              <CustomLink to="/login">Login</CustomLink>
+              {
+                //  conditional rendering user is logged in or not
+                user ? (
+                  <button
+                    className="btn btn-link text-decoration-none text-muted"
+                    onClick={() => signOut(auth)}
+                  >
+                    log-out
+                  </button>
+                ) : (
+                  <CustomLink to="/login">Login</CustomLink>
+                )
+              }
             </li>
           </ul>
         </div>
