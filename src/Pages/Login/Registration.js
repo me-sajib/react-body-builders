@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Registration = () => {
+  const [terms, setTerms] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const registerUser = (e) => {
@@ -60,17 +61,17 @@ const Registration = () => {
             // if any error occurs
             error && <div className="alert alert-danger">{error.message}</div>
           }
+          {/* checkbox our terms and condition */}
           <div className="mb-3 form-check">
             <input
               type="checkbox"
+              onClick={() => setTerms(!terms)}
+              id="terms"
               className="form-check-input"
-              id="exampleCheck1"
             />
-            <label
-              className="form-check-label text-danger"
-              htmlFor="exampleCheck1"
-            >
-              Agree term and conditions
+
+            <label className="form-check-label text-info" htmlFor="terms">
+              Agree our terms and conditions
             </label>
           </div>
 
@@ -86,9 +87,19 @@ const Registration = () => {
               ""
             )
           }
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+          {
+            // if terms is true, show a button
+            terms ? (
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            ) : (
+              <button disabled type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            )
+          }
+
           <p className="mt-3">
             Already have an account ?
             <Link
