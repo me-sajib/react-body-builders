@@ -10,7 +10,7 @@ import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   // sign in with email and password using react-firebase-hooks
-  const [signInWithEmailAndPassword, loading, error] =
+  const [signInWithEmailAndPassword, CurrentUser, loading, error] =
     useSignInWithEmailAndPassword(auth);
   // social login user check
   const [user] = useAuthState(auth);
@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   // navigate to the page from where user came
-  if (user && user.emailVerified) {
+  if (user || CurrentUser) {
     navigate(from, { replace: true });
   }
 
@@ -65,6 +65,7 @@ const Login = () => {
           </div>
           {
             // if any error occurs
+
             error && <div className="alert alert-danger">{error.message}</div>
           }
           {

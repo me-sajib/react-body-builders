@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
@@ -14,7 +15,7 @@ const Registration = () => {
     const password = e.target.pwd.value;
     const confirmPassword = e.target.pwd2.value;
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      toast("Password and Confirm Password must be same");
       return;
     }
     createUserWithEmailAndPassword(email, password);
@@ -104,6 +105,7 @@ const Registration = () => {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
