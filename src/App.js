@@ -7,6 +7,7 @@ import Registration from "./Pages/Login/Registration";
 import ResetPassword from "./Pages/Login/ResetPassword";
 import PrivateRoute from "./Pages/Login/PrivateRoute";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
+import About from "./Pages/About/About";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<div>About</div>} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/checkout/:id"
           element={
