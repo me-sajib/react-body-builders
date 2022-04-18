@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
 const Checkout = () => {
   const [services, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const [enroll, setEnroll] = useState(false);
+  // user email and name access
+  const [user] = useAuthState(auth);
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/me-sajib/json/main/services.json")
       .then((res) => res.json())
@@ -16,7 +20,8 @@ const Checkout = () => {
   const id = useParams().id;
   const service = services.find((s) => s.id === id);
 
-  const enrollCourse = () => {
+  const enrollCourse = (e) => {
+    e.preventDefault();
     toast("Course Enrolled Successfully");
     setEnroll(true);
   };
@@ -39,22 +44,76 @@ const Checkout = () => {
             <h3 className="text-info">Price: ${service?.price}</h3>
             <p className="text-muted">{service?.description}</p>
             <p className="text-primary">{service?.details}</p>
+          </div>
+          <ToastContainer />
+        </div>
 
+        <div className="w-50 mx-auto text-light">
+          <form onSubmit={enrollCourse}>
+            <div className="form-group">
+              <div className="mb-3">
+                {/* name field */}
+                <label htmlFor="exampleInputName" className="form-label">
+                  Name
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  className="form-control"
+                  id="exampleInputName"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              {/* phone field */}
+              <div className="mb-3">
+                <label htmlFor="exampleInputNumber" className="form-label">
+                  Phone
+                </label>
+                <input
+                  required
+                  type="number"
+                  name="number"
+                  className="form-control"
+                  id="exampleInputNumber"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">
+                  Email address
+                </label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  disabled
+                  value={user?.email}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="select" className="form-label">
+                  You are Enroll :
+                </label>
+                <select name="course" className="bg-info" id="select">
+                  <option value="course">{service?.name}</option>
+                </select>
+              </div>
+            </div>
             {
               // if enroll is true then show the button
               enroll ? (
                 <p className="text-info">already enrolled</p>
               ) : (
-                <button
-                  onClick={enrollCourse}
-                  className="btn btn-primary d-block w-75 mx-auto"
-                >
+                <button type="submit" className="btn btn-primary ">
                   ENROLL
                 </button>
               )
             }
-          </div>
-          <ToastContainer />
+          </form>
         </div>
       </div>
     </div>
