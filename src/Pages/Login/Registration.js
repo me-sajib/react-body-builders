@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
@@ -9,6 +12,7 @@ import SocialLogin from "./SocialLogin";
 const Registration = () => {
   const [terms, setTerms] = useState(false);
   const navigate = useNavigate();
+  const [sendEmailVerification, sending] = useSendEmailVerification(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const registerUser = (e) => {
@@ -23,9 +27,10 @@ const Registration = () => {
     createUserWithEmailAndPassword(email, password);
   };
 
-  if (user) {
+  if (user?.emailVerified) {
     return navigate("/");
   }
+
   return (
     <div className="bg-dark text-light py-3">
       <div className="container my-5 w-50 mx-auto">
@@ -75,6 +80,7 @@ const Registration = () => {
             // if loading is true, show a spinner
             loading ? <Loading /> : ""
           }
+
           {
             // if terms is true, show a button
             terms ? (
@@ -87,7 +93,27 @@ const Registration = () => {
               </button>
             )
           }
-
+          <br />
+          {
+            // if user not varified show a button
+            user && !user?.emailVerified ? (
+              <button
+                className="btn btn-info my-3"
+                onClick={async () => {
+                  await sendEmailVerification();
+                  toast("email sent to your email address");
+                }}
+              >
+                Send Verification Email Again
+              </button>
+            ) : (
+              ""
+            )
+          }
+          {
+            // email verification message send
+            sending ? <Loading /> : ""
+          }
           <p className="mt-3">
             Already have an account ?
             <Link
@@ -99,6 +125,7 @@ const Registration = () => {
           </p>
         </form>
       </div>
+
       <ToastContainer />
       <SocialLogin />
     </div>
