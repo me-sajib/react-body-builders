@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="bg-dark text-light">
+    <div className="text-light service-bg">
       <div className="container">
         <h1 className="text-center text-primary py-5">Blogs</h1>
         <div className="row row-cols-1 row-cols-md-2 g-3">

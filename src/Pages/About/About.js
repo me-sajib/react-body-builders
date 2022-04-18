@@ -3,7 +3,7 @@ import profileImage from "./images/profile.jpg";
 
 const About = () => {
   return (
-    <div className="bg-success py-5 text-light">
+    <div className="service-bg py-5 text-light">
       <div className="container">
         <h1 className="text-center text-light pb-5">About Me</h1>
         <div className="about-info">

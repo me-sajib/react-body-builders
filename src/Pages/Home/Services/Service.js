@@ -6,7 +6,7 @@ const Service = ({ services }) => {
   const { id, name, price, image, description } = services;
   return (
     <div className="col">
-      <div className="card">
+      <div className="card bg-dark text-light card-hover">
         <img src={image} className="card-img-top " alt="..." />
         <div className="card-body">
           <h3 className="card-title">{name}</h3>
@@ -14,7 +14,7 @@ const Service = ({ services }) => {
           <p className="card-text">{description}.</p>
           <Link
             to={"/checkout/" + id}
-            className="btn btn-primary d-block w-100"
+            className="btn btn-outline-primary d-block w-100"
           >
             Enroll this course
           </Link>

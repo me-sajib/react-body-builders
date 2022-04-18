@@ -27,7 +27,7 @@ const Checkout = () => {
     setEnroll(true);
   };
   return (
-    <div className="bg-dark">
+    <div className="service-bg">
       <div className="container py-5">
         {
           // if loading is true then show the loader
