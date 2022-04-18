@@ -25,10 +25,13 @@ const Registration = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
+    if (!error) {
+      toast("send verification email, please check your email inbox or spam");
+    }
   };
 
   if (user?.emailVerified) {
-    return navigate("/");
+    navigate("/");
   }
 
   return (
@@ -101,7 +104,9 @@ const Registration = () => {
                 className="btn btn-info my-3"
                 onClick={async () => {
                   await sendEmailVerification();
-                  toast("email sent to your email address");
+                  toast(
+                    "again send verification email, check inbox or spam folder"
+                  );
                 }}
               >
                 Send Verification Email Again
