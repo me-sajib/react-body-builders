@@ -96,39 +96,39 @@ const Registration = () => {
               </button>
             )
           }
-          <br />
-          {
-            // if user not varified show a button
-            user && !user?.emailVerified ? (
-              <button
-                className="btn btn-info my-3"
-                onClick={async () => {
-                  await sendEmailVerification();
-                  toast(
-                    "again send verification email, check inbox or spam folder"
-                  );
-                }}
-              >
-                Send Verification Email Again
-              </button>
-            ) : (
-              ""
-            )
-          }
-          {
-            // email verification message send
-            sending ? <Loading /> : ""
-          }
-          <p className="mt-3">
-            Already have an account ?
-            <Link
-              className="btn btn-link text-decoration-none text-info"
-              to="/login"
-            >
-              Login{" "}
-            </Link>
-          </p>
         </form>
+        <br />
+        {
+          // if user not varified show a button
+          user && !user?.emailVerified ? (
+            <button
+              className="btn btn-info my-3"
+              onClick={async () => {
+                await sendEmailVerification();
+                toast(
+                  "again send verification email, check inbox or spam folder"
+                );
+              }}
+            >
+              Send Verification Email Again
+            </button>
+          ) : (
+            ""
+          )
+        }
+        {
+          // email verification message send
+          sending ? <Loading /> : ""
+        }
+        <p className="mt-3">
+          Already have an account ?
+          <Link
+            className="btn btn-link text-decoration-none text-info"
+            to="/login"
+          >
+            Login{" "}
+          </Link>
+        </p>
       </div>
 
       <ToastContainer />
