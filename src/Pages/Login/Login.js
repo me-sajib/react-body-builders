@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useAuthState,
   useSignInWithEmailAndPassword,
@@ -29,9 +29,11 @@ const Login = () => {
   };
 
   // navigate to the page from where user came
-  if (user || CurrentUser) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user || CurrentUser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, CurrentUser]);
 
   return (
     <div className="bg-dark text-light py-3">
