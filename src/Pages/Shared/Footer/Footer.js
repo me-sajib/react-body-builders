@@ -33,44 +33,26 @@ const Footer = () => {
             <h2 className="mb-3">Our Services</h2>
             {/* our services list group */}
             <div className="list-group w-75 ">
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-primary"
-              >
+              <p className="list-group-item list-group-item-action list-group-item-primary">
                 Weight Training
-              </a>
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-secondary"
-              >
+              </p>
+              <p className="list-group-item list-group-item-action list-group-item-secondary">
                 Cardio Training
-              </a>
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-success"
-              >
+              </p>
+              <p className="list-group-item list-group-item-action list-group-item-success">
                 Zumba
-              </a>
+              </p>
 
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-warning"
-              >
+              <p className="list-group-item list-group-item-action list-group-item-warning">
                 Dance
-              </a>
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-info"
-              >
+              </p>
+              <p className="list-group-item list-group-item-action list-group-item-info">
                 Personal Training
-              </a>
+              </p>
 
-              <a
-                href="#footer"
-                className="list-group-item list-group-item-action list-group-item-dark"
-              >
+              <p className="list-group-item list-group-item-action list-group-item-dark">
                 Yoga
-              </a>
+              </p>
             </div>
           </div>
           {/* our body builder show */}
