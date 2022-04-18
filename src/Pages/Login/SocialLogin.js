@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import googleIcon from "./images/google.png";
 import githubIcon from "./images/github.png";
 import {
@@ -20,9 +20,11 @@ const SocialLogin = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   // navigate to the page from where user came
-  if (googleUser || githubUser) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (googleUser || githubUser) {
+      navigate(from, { replace: true });
+    }
+  }, [googleUser, githubUser]);
 
   return (
     <div className="w-75 mx-auto">
