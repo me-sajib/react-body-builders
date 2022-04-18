@@ -87,8 +87,8 @@ const Checkout = () => {
                   required
                   type="email"
                   name="email"
-                  disabled
-                  value={user?.email}
+                  value={user && user?.email ? user?.email : ""}
+                  {...(user && user?.email ? { disabled: true } : {})}
                   className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
