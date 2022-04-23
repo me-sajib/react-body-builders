@@ -8,7 +8,14 @@ const Dashboard = () => {
     const description = e.target.description.value;
     const image = e.target.image.value;
     const category = e.target.category.value;
-    console.log(name, price, description, image, category);
+    const service = { name, price, description, image, category };
+    fetch("http://localhost:5000/services", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(service),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div>
@@ -16,51 +23,61 @@ const Dashboard = () => {
         <h1>welcome to dashboard</h1>
         <form onSubmit={addProduct}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="nameProduct" className="form-label">
               Name Of services
             </label>
-            <input type="text" name="name" id="name" className="form-control" />
+            <input
+              type="text"
+              name="name"
+              required
+              id="nameProduct"
+              className="form-control"
+            />
           </div>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="des" className="form-label">
               Short Description
             </label>
             <textarea
               name="description"
-              id="name"
+              id="des"
+              required
               className="form-control"
             ></textarea>
           </div>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="p" className="form-label">
               Price
             </label>
             <input
               type="number"
               name="price"
-              id="name"
+              required
+              id="p"
               className="form-control"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="img" className="form-label">
               Photo url
             </label>
             <input
               type="text"
               name="image"
-              id="name"
+              required
+              id="img"
               className="form-control"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="cat" className="form-label">
               Category
             </label>
             <input
               type="text"
               name="category"
-              id="name"
+              id="cat"
+              required
               className="form-control"
             />
           </div>
