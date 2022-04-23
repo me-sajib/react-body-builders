@@ -14,16 +14,28 @@ const Checkout = () => {
   // user email and name access
   const [user] = useAuthState(auth);
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/me-sajib/json/main/services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setService(data));
     setLoading(false);
   }, []);
   const id = useParams().id;
-  const service = services.find((s) => s.id === id);
+  const service = services.find((s) => s._id === id);
 
   const enrollCourse = (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const phone = e.target.number.value;
+    const price = e.target.price.value;
+    const email = e.target.email.value;
+    const enrolled = { name, phone, price, email, enrolled: service.name };
+    fetch("http://localhost:5000/enroll", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(enrolled),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
     toast("Course Enrolled Successfully");
     setEnroll(true);
   };
@@ -79,6 +91,21 @@ const Checkout = () => {
                   name="number"
                   className="form-control"
                   id="exampleInputNumber"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputPrice" className="form-label">
+                  Price
+                </label>
+                <input
+                  required
+                  type="number"
+                  name="price"
+                  value={service?.price}
+                  disabled
+                  className="form-control"
+                  id="exampleInputPrice"
                   aria-describedby="emailHelp"
                 />
               </div>
