@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
+import Enrolled from "./Enrolled";
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth);
+  const [loading, setLoading] = useState(true);
+  const [enroll, setEnroll] = useState([]);
+
+  // post data to database
   const addProduct = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -17,11 +26,44 @@ const Dashboard = () => {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
+
+  useEffect(() => {
+    fetch("http://localhost:5000/enroll/" + user?.email)
+      .then((res) => res.json())
+      .then((data) => setEnroll(data));
+  }, []);
   return (
-    <div>
-      <div className="container">
-        <h1>welcome to dashboard</h1>
-        <form onSubmit={addProduct}>
+    <div className="d-flex">
+      <div
+        style={{ width: "200px", height: "100vh" }}
+        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
+      >
+        <h3>Dashboard </h3>
+        <hr />
+        <ul className="nav nav-pills flex-column mb-auto">
+          <li className="nav-item">
+            <a className="nav-link active" href="/dashboard">
+              Enrolled
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="bg-dark border w-100 border-light">
+        <h1 className="text-center text-light py-2">Welcome to Dashboard</h1>
+        <div className="mb-5 pb-5">
+          {loading && <Loading />}
+          <h2 className="text-light text-center pt-5">
+            You Have Enrolled{" "}
+            <span className="text-primary"> {enroll.length}</span> Courses
+          </h2>
+          <div className="row row-cols-1 w-75 mx-auto g-4 mt-5">
+            {enroll.map((e) => (
+              <Enrolled enroll={e} key={e._id} />
+            ))}
+          </div>
+        </div>
+        <form onSubmit={addProduct} className="w-50 text-light mx-auto mt-5">
+          <h1 className="text-center py-2">Add Services</h1>
           <div className="mb-3">
             <label htmlFor="nameProduct" className="form-label">
               Name Of services
