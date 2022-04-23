@@ -6,6 +6,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
+import TitlePage from "../../Hooks/TitlePage";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 
@@ -36,6 +37,7 @@ const Registration = () => {
 
   return (
     <div className="bg-dark text-light py-3">
+      <TitlePage title="Registration Now -body builder" />
       <div className="container my-5 w-50 mx-auto">
         <h1 className="text-center text-primary">Create your account</h1>
         <form onSubmit={registerUser}>

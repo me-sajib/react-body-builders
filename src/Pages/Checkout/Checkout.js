@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
+import TitlePage from "../../Hooks/TitlePage";
 import Footer from "../Shared/Footer/Footer";
 import Loading from "../Shared/Loading/Loading";
 
@@ -28,6 +29,7 @@ const Checkout = () => {
   };
   return (
     <div className="service-bg">
+      <TitlePage title="checkout -body builders" />
       <div className="container py-5">
         {
           // if loading is true then show the loader

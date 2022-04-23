@@ -5,6 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import TitlePage from "../../Hooks/TitlePage";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 
@@ -37,6 +38,7 @@ const Login = () => {
 
   return (
     <div className="bg-dark text-light py-3">
+      <TitlePage title="Login Now" />
       <div className="w-50 mx-auto my-4">
         <h1 className="text-center text-primary">Hi, Welcome Back</h1>
         <form onSubmit={loginUser}>

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
+import TitlePage from "../../Hooks/TitlePage";
 
 const ResetPassword = () => {
   // reset password using react-firebase-hooks
@@ -26,6 +27,7 @@ const ResetPassword = () => {
   };
   return (
     <div className="bg-danger py-5">
+      <TitlePage title="reset password -body-builders" />
       <div className="container">
         <h2 className="py-5 text-center text-light">Reset Your Password</h2>
         <form onSubmit={resetPassword}>

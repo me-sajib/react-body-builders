@@ -5,9 +5,11 @@ import blog1 from "./images/blog1.png";
 import blog2 from "./images/blog2.png";
 import blog3 from "./images/blog3.png";
 import "./Blogs.css";
+import TitlePage from "../../Hooks/TitlePage";
 const Blogs = () => {
   return (
     <div className="text-light service-bg py-5">
+      <TitlePage title="Blog -body builders" />
       <div className="container">
         <div className="row row-cols-1 row-cols-md-2 g-3">
           <div className="col">
