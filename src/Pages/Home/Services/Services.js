@@ -7,7 +7,7 @@ const Services = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/me-sajib/json/main/services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
     setLoading(false);
