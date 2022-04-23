@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Shared/Footer/Footer";
 import profileImage from "./images/profile.jpg";
 
 const About = () => {
@@ -12,30 +13,41 @@ const About = () => {
               <img src={profileImage} className="w-100 img-fluid h-75" alt="" />
             </div>
             <div className="col-md-6">
-              <h2 className="text-info">Stay Focused on MISSION 2022</h2>
+              <h2 className="text-info">Stay Focused on training</h2>
               <p>
-                This year i will be a web developer and anyway i will get a job
-                in the future. My Mission To continue to learn and improve my
-                skills To become the best developer. <br /> <br /> i can be To
-                build my dream career, <br /> My only goal is to become a good
-                developer. I have only one vision, I will be a good developer,
-                and I will do a lot of good quality work, I will get a job in a
-                good company that's way i'm working hard for this. <br /> <br />{" "}
-                Self-learning is an important part of the learning process, I
-                always try to learn something new and keep updated myself to the
-                latest technology. it's very challenging.
-                <br />
-                Having a goal and working to complete it can improve my job
-                satisfaction of me. By establishing goals, i can create a sense
-                of purpose in my career
-                <br /> <br />
-                mentorship, sharing support, sharing tools, code reviews,
-                answering questions, and much more.
+                My name is Jose <b> Luis Patier</b>. I am a doctor, 61 years old
+                and I work in a hospital in Madrid. I would like to make you
+                participate in my history: my experience in the world of fitness
+                and my fight against Covid-19. I had been training with my
+                personal trainer, Javier Morillo (great coach and, now, friend),
+                with the aim of achieving a healthier body in every way. In a
+                few weeks - months I achieved a significant improvement in my
+                fitness and muscle recovery. But I fell ill as a result of
+                Covid-19. Severe bilateral pneumonia quickly brought me to
+                intensive care services (UCI). My health was critic. A
+                respirator fully and automatically maintained my breathing
+                movements until the treatment took effect and I was able to
+                begin to wake up. Then the miracle appeared. Because "to breathe
+                again you just need to have your tube removed, although this
+                can't be done right away." The development of the various
+                muscles of my chest and the general physical and nutritional
+                form managed to save my life and helped me to fight with the
+                Covid. After 8 long days I managed to get rid of that machine
+                that for a while kept me alive. Therefore, Javier's work was
+                visible, as one more ally and I have subsequently thanked him
+                from the heart. He helped save my life unequivocally. the gym as
+                a means of cult of the body, but the truth is that it is much
+                more. He gave me the tools to finally breathe alone, and from
+                here I encourage you all to reflect on the care of our bodies in
+                the hands of professionals. My body, healthier than ever,
+                subjected me to life. Thank you, Javier! José Luis Patier –
+                Doctor
               </p>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
