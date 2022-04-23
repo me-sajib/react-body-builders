@@ -9,6 +9,7 @@ import PrivateRoute from "./Pages/Login/PrivateRoute";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
