@@ -23,6 +23,9 @@
   padding: 4px 8px;
   text-transform: uppercase;
 }
+.img {
+  position: relative;
+}
 .title-enter-blog {
   background-color: #181824 !important;
   /* background-color: red; */
