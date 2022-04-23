@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/Service.css";
 
 const Service = ({ services }) => {
-  const { id, name, price, image, description } = services;
+  const { _id, name, price, image, description } = services;
   return (
     <div className="col">
       <div className="card bg-dark text-light card-hover">
@@ -13,7 +13,7 @@ const Service = ({ services }) => {
           <h4 className="card-title">Price: ${price}</h4>
           <p className="card-text">{description}.</p>
           <Link
-            to={"/checkout/" + id}
+            to={"/checkout/" + _id}
             className="btn btn-outline-primary d-block w-100"
           >
             Enroll this course
