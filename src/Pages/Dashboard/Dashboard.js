@@ -31,6 +31,7 @@ const Dashboard = () => {
     fetch("http://localhost:5000/enroll/" + user?.email)
       .then((res) => res.json())
       .then((data) => setEnroll(data));
+    setLoading(false);
   }, []);
   return (
     <div className="d-flex">
