@@ -14,7 +14,7 @@ const Checkout = () => {
   // user email and name access
   const [user] = useAuthState(auth);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://quiet-woodland-96649.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setService(data));
     setLoading(false);
@@ -29,7 +29,7 @@ const Checkout = () => {
     const price = e.target.price.value;
     const email = e.target.email.value;
     const enrolled = { name, phone, price, email, enrolled: service.name };
-    fetch("http://localhost:5000/enroll", {
+    fetch("https://quiet-woodland-96649.herokuapp.com/enroll", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(enrolled),

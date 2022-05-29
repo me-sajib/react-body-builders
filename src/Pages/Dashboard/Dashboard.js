@@ -18,7 +18,7 @@ const Dashboard = () => {
     const image = e.target.image.value;
     const category = e.target.category.value;
     const service = { name, price, description, image, category };
-    fetch("http://localhost:5000/services", {
+    fetch("https://quiet-woodland-96649.herokuapp.com/services", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(service),
@@ -28,11 +28,11 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/enroll/" + user?.email)
+    fetch("https://quiet-woodland-96649.herokuapp.com/enroll/" + user?.email)
       .then((res) => res.json())
       .then((data) => setEnroll(data));
     setLoading(false);
-  }, []);
+  }, [user?.email]);
   return (
     <div className="d-flex">
       <div
